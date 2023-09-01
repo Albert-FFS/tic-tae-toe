@@ -1,0 +1,48 @@
+.mainBoard{
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.mainBoard table{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-collapse: collapse;
+}
+.mainBoard table caption{
+  font-size: 2em;
+  font-weight: 400;
+  word-spacing: 1em;
+  text-align: center;
+  text-decoration: underline;
+  margin: 10px auto;
+}
+.mainBoard table tbody tr{
+
+}
+.mainBoard table tbody tr td{
+  width: 100px;
+  height: 100px;
+  background: #ccc;
+  border: #000 solid 1px;
+}
+.mainBoard table tbody tr td button{
+  width: 100%;
+  height: 100%;
+  font-size: 5em;
+  text-align: center;
+}
+.mainBoard table tbody tr td button:hover{
+  background: greenyellow;
+}
+.mainBoard table tbody tr td button.player1{
+  background: blue !important;
+}
+.mainBoard table tbody tr td button.player2{
+  background: red !important;
+}

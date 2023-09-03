@@ -58,6 +58,7 @@ export default function MainBoard() {
   const [player1, setPlayer1] = useState<boolean>(true);
   const [gameOver, setGameOver] = useState<boolean>(false);
   const [Board, setBoard] = useState(DefaultBoard);
+  const [iteraction, setIteraction] = useState<number>(1)
   const MarkCell = (r: number, c: number) => {
     if (!gameOver) {
       const newBoard = Board;
@@ -65,6 +66,10 @@ export default function MainBoard() {
       IfHaveSomeWinner();
       setPlayer1(!player1);
       setBoard(newBoard);
+      setIteraction(iteraction+1);
+      if(iteraction>8){
+        setGameOver(true);
+      }
     }
   };
   const ReturnClass = (r: number, c: number): string => {
@@ -78,7 +83,7 @@ export default function MainBoard() {
     }
   };
   const IfHaveSomeWinner = () => {
-    ListWinnerLines.forEach((line, iteraction) => {
+    ListWinnerLines.forEach((line) => {
       const LineValues = [
         Board[line[0][0]][line[0][1]],
         Board[line[1][0]][line[1][1]],
@@ -89,7 +94,6 @@ export default function MainBoard() {
           LineValues[0] === LineValues[1] &&
           LineValues[0] === LineValues[2]
         ) {
-          // alert(`Ganaste ${player1 ? "Jugador 1" : "Jugador 2"}`);
           setGameOver(true);
         }
       }
@@ -102,6 +106,7 @@ export default function MainBoard() {
       ["", "", ""],
     ]);
     setGameOver(false);
+    setIteraction(1);
   };
   return (
     <div className="mainBoard">
@@ -202,7 +207,7 @@ export default function MainBoard() {
       {gameOver ? (
         <Modal
           restart={RestartGame}
-          winner={player1 ? "Jugador 2" : "Jugador 1"}
+          winner={(iteraction<9)?(player1 ? "Jugador 2" : "Jugador 1"):"Empate"}
         />
       ) : (
         ""

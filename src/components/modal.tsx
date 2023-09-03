@@ -1,4 +1,3 @@
-import { useState } from "react"
 import "./modal.css";
 type modalArgs = {
   winner:string,

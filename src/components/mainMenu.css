@@ -1,0 +1,58 @@
+@keyframes colorNeon {
+  0% {
+    border: solid 5px rgba(60, 0, 255, 0.974);
+  }
+  50% {
+    border: solid 5px rgba(13, 255, 0, 0.974);
+  }
+  100% {
+    border: solid 5px rgba(255, 0, 111, 0.974);
+  }
+}
+.mainMenu{
+  background: #fff;
+  width: 100%;
+  height: 80vh;
+  padding: 20px 40px;
+  margin-bottom:200px ;
+}
+.mainMenu fieldset{
+  width: 100%;
+  margin: 20px auto;
+  animation: colorNeon 10s linear infinite alternate-reverse;
+  -webkit-animation: colorNeon 10s linear infinite alternate-reverse;
+}
+.mainMenu fieldset legend{
+  font-size: 2em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.mainMenu fieldset button{
+  padding: 8px 16px;
+  font-size: 1.2em;
+  margin: 15px auto;
+  border: 1px solid #000;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.mainMenu fieldset .content{
+  background: rgba(0,0,0,0.05);
+  padding: 10px;
+}
+.mainMenu fieldset .content p{
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1em;
+  text-align: left;
+}
+.mainMenu fieldset .content p ul{
+  list-style-type: circle;
+  list-style-position: inside;
+  margin: 10px auto;
+}
+.mainMenu fieldset .content p ul li{
+  font-weight: 500;
+  line-height: 1.5em;
+}
